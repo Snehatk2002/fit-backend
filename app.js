@@ -15,17 +15,9 @@ app.get("/test",(req,res)=>{
 	res.send({"status":"success"})
 })
 
-app.post("/adminSignup",(req,res)=>{
-	let input=req.body
-    let hashedpassword=bcrypt.hashSync(input.password,10)
-    //console.log(hashedpassword)
-    input.password=hashedpassword
-    console.log(input)
-    let result=new loginModel(input)
-    result.save()
-    res.json({"status":"success"})
+//USER LOGIN
 
-})
+
 
 app.post("/adminSignin",(req,res)=>{
     let input=req.body
